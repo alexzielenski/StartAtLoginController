@@ -30,6 +30,7 @@
 - (void)dealloc {
 	self.identifier = nil;
 	self.url        = nil;
+	[super dealloc];
 }
 - (void)setBundle:(NSBundle*)bndl {
 	self.identifier = [bndl bundleIdentifier];
