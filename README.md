@@ -43,7 +43,7 @@ Works only on 10.6.6 and up
 
 This is licensed under MIT. Here is some legal jargon:
 
-Copyright (c) 2010 Alex Zielenski
+Copyright (c) 2011 Alex Zielenski
 All Rights Reserved
 
 Permission is hereby granted, free of charge, to any person obtaining
