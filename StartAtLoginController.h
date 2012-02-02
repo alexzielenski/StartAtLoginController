@@ -20,13 +20,18 @@
 // TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
 // SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#import <Foundation/Foundation.h>
+
 @interface StartAtLoginController : NSObject {
 	NSString *_identifier;
 	NSURL    *_url;
 }
-@property (assign) BOOL startAtLogin;
-@property (copy)   NSString *identifier;
-@property (copy)   NSURL *url;
+
+@property (assign, nonatomic) BOOL startAtLogin;
+@property (copy, atomic)   NSString *identifier;
+@property (copy, atomic)   NSURL *url;
+
 - (void)setBundle:(NSBundle*)bndl;
 - (void)remove;
+
 @end
