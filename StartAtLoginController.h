@@ -27,9 +27,9 @@
 	NSURL    *_url;
 }
 
-@property (assign, nonatomic) BOOL startAtLogin;
-@property (copy, atomic)   NSString *identifier;
-@property (copy, atomic)   NSURL *url;
+@property (assign, nonatomic)   BOOL startAtLogin;
+@property (copy, atomic)        NSString *identifier;
+@property (copy, atomic)        NSURL *url;
 
 - (void)setBundle:(NSBundle*)bndl;
 - (void)remove;
