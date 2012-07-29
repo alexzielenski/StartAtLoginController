@@ -31,9 +31,7 @@
 @property (assign, nonatomic, readwrite)   BOOL startAtLogin;
 @property (assign, nonatomic, readwrite)   BOOL enabled;
 @property (copy, nonatomic, readwrite)     NSString *identifier;
-@property (copy, nonatomic, readwrite)     NSURL *url;
 
-- (id)initWithBundle:(NSBundle*)bndl;
-- (void)setBundle:(NSBundle*)bndl;
+-(id)initWithIdentifier:(NSString*)identifier;
 
 @end
