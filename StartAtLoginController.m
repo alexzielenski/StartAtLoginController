@@ -26,12 +26,10 @@
 @implementation StartAtLoginController
 
 @synthesize identifier = _identifier;
-@synthesize url        = _url;
 
 #if !__has_feature(objc_arc)
 - (void)dealloc {
     self.identifier = nil;
-    self.url        = nil;
     [super dealloc];
 }
 #endif
@@ -50,26 +48,21 @@
     return automatic;
 }
 
--(id)initWithBundle:(NSBundle*)bndl
-{
-    self = [super init];
-    if (self) {
-        _enabled = NO;
-        [self setBundle:bndl];
-        
-        // this method call initializes _enabled to the correct value as a side effect.
-        [self startAtLogin];
-#if !defined(NDEBUG)
-        NSLog(@"Launcher '%@' %@ configured to start at login",
-              self.identifier, (_enabled ? @"is" : @"is not"));
-#endif
+-(id)initWithIdentifier:(NSString*)identifier {
+    self = [self init];
+    if(self) {
+        self.identifier = identifier;
     }
     return self;
 }
 
-- (void)setBundle:(NSBundle*)bndl {
-    self.identifier = [bndl bundleIdentifier];
-    self.url        = [bndl bundleURL];
+-(void)setIdentifier:(NSString *)identifier {
+    _identifier = identifier;
+    [self startAtLogin];
+#if !defined(NDEBUG)
+    NSLog(@"Launcher '%@' %@ configured to start at login",
+          self.identifier, (_enabled ? @"is" : @"is not"));
+#endif
 }
 
 - (BOOL)startAtLogin {
@@ -101,7 +94,7 @@
 }
 
 - (void)setStartAtLogin:(BOOL)flag {
-    if (!_identifier||!_url)
+    if (!_identifier)
         return;
     
     [self willChangeValueForKey:@"startAtLogin"];
