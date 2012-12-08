@@ -37,7 +37,7 @@ to your main app's target. You can use the controller either in code or with the
 
 When using in code, create an instance of `StartAtLoginController` by providing the helper app's bundle identifier:
 
-	StartAtLoginController loginController = [[StartAtLoginController alloc] initWithIdentifier:@"your.app.helpers.bundle.id"];
+	StartAtLoginController *loginController = [[StartAtLoginController alloc] initWithIdentifier:@"your.app.helpers.bundle.id"];
 	
 Now, you can manipulate the Services Entry:
 
